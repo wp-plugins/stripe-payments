@@ -12,7 +12,7 @@ Accept payments from your WordPress site via Stripe payment gateway.
 
 == Description ==
 
-This plugin allows you to accept credit card payments via Stripe. It has a simple shortcode that lets you to place a buy button anywhere on your WordPress site. 
+This plugin allows you to accept credit card payments via Stripe. It has a simple shortcode that lets you place a buy button anywhere on your WordPress site.
 
 = Features =
 
@@ -33,7 +33,7 @@ You can run it in test mode by specifying test API keys in the plugin settings.
 
 In order to create a buy button insert the following shortcode into a post/page.
 
-[accept_stripe_payment]
+`[accept_stripe_payment]`
 
 It supports the following attributes in the shortcode -
 
