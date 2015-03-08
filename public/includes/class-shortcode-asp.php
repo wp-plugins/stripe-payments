@@ -68,11 +68,13 @@ class AcceptStripePaymentsShortcode {
         }
         else
             $url = '';
+	$quantity = strtoupper($quantity);
+	if ("$quantity" === "N/A") $quantity = "NA";
 
         $button_id = 'stripe_button_' . count(self::$payment_buttons);
         self::$payment_buttons[] = $button_id;
-        $priceInCents = $price * 100;
-        $paymentAmount = $price*$quantity;
+        $paymentAmount = ("$quantity" === "NA" ? $price : ($price * $quantity));
+        $priceInCents = $paymentAmount * 100 ;
 
         $output = "<form action='" . $this->AcceptStripePayments->get_setting('checkout_url') . "' METHOD='POST'> ";
 
@@ -80,9 +82,12 @@ class AcceptStripePaymentsShortcode {
           data-key='".$this->AcceptStripePayments->get_setting('api_publishable_key')."'
           data-panel-label='Pay'
           data-amount='{$priceInCents}' 
-          data-name='{$name}'
-          data-description='{$quantity} piece for {$paymentAmount} {$currency}'
-          data-label='{$button_text}'
+          data-name='{$name}'";
+	if ("$quantity"==="NA")
+          $output .= "data-description='{$paymentAmount} {$currency}'";
+	else
+          $output .= "data-description='{$quantity} piece".($quantity <> 1 ? "s" : "")." for {$paymentAmount} {$currency}'";
+        $output .="data-label='{$button_text}'
           data-currency='{$currency}'
           ></script>";
 
@@ -123,7 +128,7 @@ class AcceptStripePaymentsShortcode {
             return;
         }
 
-        $paymentAmount = $_POST['item_price'] * $_POST['item_quantity'];
+        $paymentAmount = ($_POST['item_quantity'] !== "NA" ? ($_POST['item_price'] * $_POST['item_quantity']) : $_POST['item_price']);
 
         $currencyCodeType = strtolower($_POST['currency_code']);
 

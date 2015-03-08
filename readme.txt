@@ -1,10 +1,10 @@
 === Stripe Payments ===
 Contributors: Tips and Tricks HQ, wptipsntricks
 Donate link: http://www.tipsandtricks-hq.com/
-Tags: stripe, payment, payments, button, shortcode, digital goods, payment gateway, instant payment, commerce, digital downloads, download, downloads, e-commerce, e-store, ecommerce, eshop
+Tags: stripe, payment, payments, button, shortcode, digital goods, payment gateway, instant payment, commerce, digital downloads, download, downloads, e-commerce, e-store, ecommerce, eshop, donation
 Requires at least: 3.5
 Tested up to: 4.1
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,18 +12,21 @@ Accept payments from your WordPress site via Stripe payment gateway.
 
 == Description ==
 
-This plugin allows you to accept credit card payments via Stripe. It has a simple shortcode that lets you place a buy button anywhere on your WordPress site.
+This plugin allows you to accept credit card payments via Stripe. It has a simple shortcode that lets you place buy buttons anywhere on your WordPress site.
 
 = Features =
 
 * Quick installation and setup.
-* Sell files, digital goods or downloads using Stripe.
+* Easily take payment for a service from your site via Stripe.
+* Sell files, digital goods or downloads using your Stripe merchant account.
 * Sell music, video, ebook, PDF or any other digital media files.
 * The ultimate plugin to create Stripe payment buttons.
-* Create a buy button on the fly and embed it anywhere on your site using a user-friendly shortcode.
+* Create buy buttons for your products or services on the fly and embed it anywhere on your site using a user-friendly shortcode.
 * Ability to add multiple "Buy Now" buttons to a post/page.
-* Allow a user to automatically download the file once the purchase is complete.
+* Allow users to automatically download the digital file after the purchase is complete.
 * View purchase orders from your WordPress admin dashboard.
+* Accept donation on your WordPress site for a cause.
+* Create a stripe payment button widget and add it to your sidebar.
 
 The setup is very easy. Once you have installed the plugin, all you need to do is enter your Stripe API credentials in the plugin settings (Settings -> Accept Stripe Payments) and your website will be ready to accept credit card payments.
 
@@ -37,7 +40,7 @@ In order to create a buy button insert the following shortcode into a post/page.
 
 It supports the following attributes in the shortcode -
 
-    item_name:
+    name:
     (string) (required) Name of the product
     Possible Values: 'Awesome Script', 'My Ebook', 'Wooden Table' etc.
 
@@ -63,9 +66,9 @@ It supports the following attributes in the shortcode -
     (string) (optional) Label of the payment button
     Possible Values: 'Buy Now', 'Pay Now' etc
 
-`[accept_stripe_payment item_name="Cool Script" price="50" url="http://example.com/downloads/my-script.zip" button_text="Buy Now"]`
+`[accept_stripe_payment name="Cool Script" price="50" url="http://example.com/downloads/my-script.zip" button_text="Buy Now"]`
 
-For detailed instructions please check the [WordPress Stripe Plugin](https://www.tipsandtricks-hq.com/ecommerce/wordpress-stripe-plugin-accept-payments-using-stripe) documentation page.
+For detailed instructions please check the [WordPress Stripe Payments Plugin](https://www.tipsandtricks-hq.com/ecommerce/wordpress-stripe-plugin-accept-payments-using-stripe) documentation page.
 
 == Installation ==
 
@@ -124,6 +127,9 @@ Yes, please visit Settings > Accept Stripe Payments screen for options.
 None
 
 == Changelog ==
+
+= 1.0.2 = 
+* Updated the payment shortcode parameter.
 
 = 1.0.1 =
 * First Release
