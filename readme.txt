@@ -3,7 +3,7 @@ Contributors: Tips and Tricks HQ, wptipsntricks
 Donate link: http://www.tipsandtricks-hq.com/
 Tags: stripe, payment, payments, button, shortcode, digital goods, payment gateway, instant payment, commerce, digital downloads, download, downloads, e-commerce, e-store, ecommerce, eshop, donation
 Requires at least: 3.5
-Tested up to: 4.1
+Tested up to: 4.3
 Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
